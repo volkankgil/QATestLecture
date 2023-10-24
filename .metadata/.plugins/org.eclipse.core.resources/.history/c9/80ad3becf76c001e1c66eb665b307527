@@ -1,0 +1,21 @@
+package SeleniumLesson2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class frameTest {
+public static void main(String[] args) {
+	
+	System.setProperty("webdriver.chrome.driver","/Users/satınalma2.AYG01/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.jqueryui.com/droppable/");
+	
+	driver.switchTo().frame((WebElement) By.xpath("/html/body/div/div[2]/div/div[1]/iframe"));
+	driver.findElement(By.id("draggable")).click();
+
+
+}
+}
